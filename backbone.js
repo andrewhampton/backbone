@@ -90,6 +90,7 @@
     // same arguments as `trigger` is, apart from the event name.
     // Listening for `"all"` passes the true event name as the first argument.
     trigger : function(ev) {
+      console.log(ev);
       var list, calls, i, l;
       if (!(calls = this._callbacks)) return this;
       if (calls[ev]) {
@@ -1073,6 +1074,7 @@
         onError(model, resp, options);
       } else {
         model.trigger('error', model, resp, options);
+        console.log(model);
       }
     };
   };
